@@ -1,7 +1,7 @@
 # CSharpProject
 Processes of adding,updating,deleting
 
-Bu proje herhangi ürünlerin eklenilme, güncellenilme, silinme işlemlerini yapmaya yarar.
+The project provides to processes of adding, updating, deleting for products. When i made this project, i used entity frameworks. You can see images which is about user interface of project.
 
 
 ![Screenshot_1](https://user-images.githubusercontent.com/94108168/191542085-4571d327-c54f-4039-befa-81f3cc42e551.png)
