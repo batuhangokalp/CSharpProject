@@ -85,5 +85,22 @@ namespace EntityFrameworkDemo
             MessageBox.Show("Deleted");
             CleanTextBoxUpdate();
         }
+        private void SearchProduct(string key)
+        {
+           var result = _productDal.GetAll().Where(p=>p.Name.ToLower().Contains(key.ToLower())).ToList(); //(Koleksiyon) Buyuk kucuk harf duyarlı oldugundan kucuk harfle arandıgı zaman veri gelmez. o yuzden tolower kullanıyoruz.
+          // var result = _productDal.GetByName(key);  (Veri tabani) Bu sekilde arattıgımız zaman herhangi bi sikinti yok.
+
+            dgwProducts.DataSource = result;    
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchProduct(tbxSearch.Text);
+        }
+
+        private void btnGetById_Click(object sender, EventArgs e)
+        {
+            _productDal.GetById(1);
+        }
     }
 }

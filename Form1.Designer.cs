@@ -46,6 +46,9 @@
             this.lblUnitPrice = new System.Windows.Forms.Label();
             this.lblStockAmount = new System.Windows.Forms.Label();
             this.dgwProducts = new System.Windows.Forms.DataGridView();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.btnGetById = new System.Windows.Forms.Button();
             this.gbxUpdate.SuspendLayout();
             this.gbxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).BeginInit();
@@ -56,7 +59,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnDelete.Location = new System.Drawing.Point(1013, 465);
+            this.btnDelete.Location = new System.Drawing.Point(1037, 518);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(119, 32);
             this.btnDelete.TabIndex = 13;
@@ -74,7 +77,7 @@
             this.gbxUpdate.Controls.Add(this.lblUnitPriceUpdate);
             this.gbxUpdate.Controls.Add(this.lblStockAmountUpdate);
             this.gbxUpdate.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gbxUpdate.Location = new System.Drawing.Point(508, 248);
+            this.gbxUpdate.Location = new System.Drawing.Point(500, 298);
             this.gbxUpdate.Name = "gbxUpdate";
             this.gbxUpdate.Size = new System.Drawing.Size(396, 252);
             this.gbxUpdate.TabIndex = 12;
@@ -151,7 +154,7 @@
             this.gbxAdd.Controls.Add(this.lblUnitPrice);
             this.gbxAdd.Controls.Add(this.lblStockAmount);
             this.gbxAdd.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gbxAdd.Location = new System.Drawing.Point(89, 248);
+            this.gbxAdd.Location = new System.Drawing.Point(81, 298);
             this.gbxAdd.Name = "gbxAdd";
             this.gbxAdd.Size = new System.Drawing.Size(396, 252);
             this.gbxAdd.TabIndex = 11;
@@ -224,7 +227,7 @@
             this.dgwProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgwProducts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgwProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwProducts.Location = new System.Drawing.Point(81, 46);
+            this.dgwProducts.Location = new System.Drawing.Point(81, 98);
             this.dgwProducts.Name = "dgwProducts";
             this.dgwProducts.RowHeadersWidth = 51;
             this.dgwProducts.RowTemplate.Height = 24;
@@ -232,11 +235,45 @@
             this.dgwProducts.TabIndex = 10;
             this.dgwProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwProducts_CellClick);
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSearch.Location = new System.Drawing.Point(918, 344);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(52, 16);
+            this.lblSearch.TabIndex = 14;
+            this.lblSearch.Text = "Search";
+            // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Location = new System.Drawing.Point(994, 341);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(180, 22);
+            this.tbxSearch.TabIndex = 15;
+            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            // 
+            // btnGetById
+            // 
+            this.btnGetById.BackColor = System.Drawing.Color.Turquoise;
+            this.btnGetById.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGetById.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnGetById.Location = new System.Drawing.Point(81, 23);
+            this.btnGetById.Name = "btnGetById";
+            this.btnGetById.Size = new System.Drawing.Size(119, 32);
+            this.btnGetById.TabIndex = 16;
+            this.btnGetById.Text = "Get By Id";
+            this.btnGetById.UseVisualStyleBackColor = false;
+            this.btnGetById.Click += new System.EventHandler(this.btnGetById_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 586);
+            this.Controls.Add(this.btnGetById);
+            this.Controls.Add(this.tbxSearch);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.gbxUpdate);
             this.Controls.Add(this.gbxAdd);
@@ -250,6 +287,7 @@
             this.gbxAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProducts)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -273,6 +311,9 @@
         private System.Windows.Forms.Label lblUnitPrice;
         private System.Windows.Forms.Label lblStockAmount;
         private System.Windows.Forms.DataGridView dgwProducts;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Button btnGetById;
     }
 }
 
